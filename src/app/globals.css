@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap");
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start: hsl(214, 47%, 23%);
+    --background-end: hsl(237, 49%, 15%);
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    color: var(--header-outline);
+    background: radial-gradient(
+        circle at top,
+        var(--background-start),
+        var(--background-end)
+    );
+}
+
+.custom-shadow-inner {
+    position: relative;
+    box-shadow: inset 0 10px 6px 0 #bbc1d7;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-shadow-hover:hover {
+    box-shadow: inset 300px 1px 2px #b0b3c0;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.animated-background {
+    animation-duration: 4.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: darkgray;
+    opacity: 0.5;
+    background: linear-gradient(
+        to right,
+        #b0b3c0 10%,
+        #bbc1d7 18%,
+        #b0b3c0 33%
+    );
+}
+
+.shadow-effect {
+    box-shadow:
+        0 0 60px 10px rgba(255, 255, 255, 0.1),
+        0 0 100px 30px rgba(255, 255, 255, 0.1),
+        0 0 140px 10px rgba(255, 255, 255, 0.1);
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
